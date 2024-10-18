@@ -1,5 +1,12 @@
-from app import db
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-# based on models
-db.create_all()
-print("Tables created successfully!")
+# Import both app and db from your app module
+from app import app, db
+
+# Create the tables within the app context
+with app.app_context():
+    db.create_all()
+    print("Tables created successfully!")
+
