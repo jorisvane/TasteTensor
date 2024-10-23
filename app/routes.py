@@ -1,6 +1,9 @@
 from app import app, db
 from flask import jsonify
-from app.models import Recipe  # Assuming you have a Recipe model
+from app.models import Recipe  # Assuming you have a Recipe model`
+from flask import render_template
+
+# This defines the API endpoints, how does the app handle HTTP requests
 
 @app.route('/test-db')
 def test_db():
@@ -14,3 +17,7 @@ def test_db():
     except Exception as e:
         # Catch any error and return a message
         return jsonify({"error": str(e)})
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
