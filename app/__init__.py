@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
+from app import routes
 
 load_dotenv()
 
@@ -14,5 +15,3 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://
 # Configure database connetction
 
 db = SQLAlchemy(app)
-
-from app import routes

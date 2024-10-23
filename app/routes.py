@@ -1,4 +1,4 @@
-from app import app, db
+from app import app
 from flask import jsonify
 from app.models import Recipe  # Assuming you have a Recipe model`
 from flask import render_template
