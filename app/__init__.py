@@ -16,4 +16,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://
 
 db = SQLAlchemy(app)
 
-from app import routes  # noqa: F401
+from app import routes  # noqa: F401, E402
