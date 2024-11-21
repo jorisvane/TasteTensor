@@ -1,4 +1,0 @@
-[tool.ruff]
-[tool.ruff.lint]
-select = ["E", "F", "W", "B"]
-ignore = ["E501"]  # Ignore line length warnings
