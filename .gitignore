@@ -1,4 +1,4 @@
 /data/
-/ttvenv/
+/venv/
 .env
 /app/__pycache__
