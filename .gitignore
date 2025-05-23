@@ -1,5 +1,28 @@
-/data/
-/venv/
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
 .env
-/app/__pycache__
+.env.*
+
+# Application files
+/data/
 embeddings.csv
+
+# Byte-compiled files in subfolders
+**/__pycache__/
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS and system files
+.DS_Store
