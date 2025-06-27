@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from typing import List
 
 app = FastAPI()
 
@@ -13,4 +14,10 @@ app.add_middleware(
 
 @app.get("/api/ping")
 def ping():
-    return {"message": "pong"}
+    return {"message": "Hallo dit is Joris"}
+
+@app.get("/api/search")
+def search(query: str) -> dict:
+    all_items = ["apple", "banana", "grape"]
+    results = [item for item in all_items if query.lower() in item.lower()]
+    return {"results": results}
