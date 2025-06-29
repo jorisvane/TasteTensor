@@ -23,15 +23,17 @@ function App() {
   }, [query]);
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <SearchBar onSearch={setQuery} />
-      <ul>
-        {results.map((item, idx) => (
-          <li key={idx} style={{ padding: '0.5rem 0' }}>
-            {item}
-          </li>
-        ))}
-      </ul>
+    <div className="app-container">
+      <div className="search-section">
+        <SearchBar onSearch={setQuery} />
+        <ul>
+          {results.map((item, idx) => (
+            <li key={idx} style={{ padding: '0.5rem 0' }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
