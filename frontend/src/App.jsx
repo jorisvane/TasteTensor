@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
+import './App.css';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -23,7 +24,6 @@ function App() {
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>Fruit Search</h1>
       <SearchBar onSearch={setQuery} />
       <ul>
         {results.map((item, idx) => (
