@@ -24,16 +24,21 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="search-section">
-        <SearchBar onSearch={setQuery} />
-        <ul>
-          {results.map((item, idx) => (
-            <li key={idx} style={{ padding: '0.5rem 0' }}>
-              {item}
-            </li>
-          ))}
-        </ul>
+      <div className="top-row">
+        <div className="search-label">
+          <span className="label-line">Taste</span>
+          <span className="label-line">Tensor</span>
+        </div>
+        <div className="centered-search-bar">
+          <SearchBar onSearch={setQuery} />
+        </div>
       </div>
+
+      <ul className="results-list">
+        {results.map((item, idx) => (
+          <li key={idx}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }

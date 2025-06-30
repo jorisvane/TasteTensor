@@ -4,14 +4,10 @@
   background-color: #222;
   border-radius: 10px;
   padding: 10px 16px;
-  max-width: 800px;
+  max-width: 600px;
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
-}
-
-.search-bar:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .search-icon {
@@ -31,26 +27,4 @@
 
 .search-bar input::placeholder {
   color: #00ffff;
-}
-
-.search-bar-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.search-label {
-  display: flex;
-  flex-direction: column;
-  font-family: monospace;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #222;
-  color: #00ffff;
-  padding: 8px 12px;
-  border-radius: 6px;
-  box-shadow: 2px 2px 0 #00ffff, -2px -2px 0 #222;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.1;
 }
