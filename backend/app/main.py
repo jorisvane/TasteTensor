@@ -18,6 +18,6 @@ def ping():
 
 @app.get("/api/search")
 def search(query: str) -> dict:
-    all_items = ["apple", "banana", "grape"]
+    all_items = ["apple", "banana", "grape", "grapez"]
     results = [item for item in all_items if query.lower() in item.lower()]
     return {"results": results}
