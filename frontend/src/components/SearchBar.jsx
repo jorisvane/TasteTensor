@@ -11,7 +11,7 @@ export default function SearchBar({ onSearch }) {
       <FaSearch className="search-icon" />
       <input
         type="text"
-        placeholder="Type to search and enter..."
+        placeholder="Type to search..."
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
@@ -19,6 +19,9 @@ export default function SearchBar({ onSearch }) {
           }
         }}
       />
+      <button onClick={() => onSearch(input)} className="search-button">
+        Search
+      </button>
     </div>
   );
 }
