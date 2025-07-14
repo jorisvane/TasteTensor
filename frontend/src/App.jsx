@@ -36,9 +36,13 @@ function App() {
 
       <ul className="results-list">
         {results.map((item, idx) => (
-          <li key={idx}>{item}</li>
+          <li key={idx}>
+            <strong>{item.title}</strong><br />
+            <span>{item.image}</span>
+          </li>
         ))}
       </ul>
+
     </div>
   );
 }

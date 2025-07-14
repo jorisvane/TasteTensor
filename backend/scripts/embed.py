@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from app.connection import get_connection
+from app.db.connection import get_connection
 from tqdm import tqdm
 from psycopg2.extras import execute_batch
 from sentence_transformers import SentenceTransformer

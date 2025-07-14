@@ -1,4 +1,4 @@
-from app.connection import get_connection
+from app.db.connection import get_connection
 
 def create_table():
     with get_connection() as conn, conn.cursor() as cur:
