@@ -26,3 +26,5 @@ embeddings.csv
 
 # macOS and system files
 .DS_Store
+
+*scripts/pca_model.pkl
