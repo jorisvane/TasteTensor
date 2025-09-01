@@ -1,0 +1,58 @@
+.map-viewport {
+  width: 100%;
+  height: calc(100vh - 80px); 
+  overflow: scroll; 
+  position: relative;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.map-container {
+  width: 10000px;
+  height: 10000px;
+  position: relative;
+}
+
+.recipe-point {
+  position: absolute;
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden; 
+  background-color: #ccc; 
+}
+
+.recipe-point:hover {
+  transform: translate(-50%, -50%) scale(1.2); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 20; 
+}
+
+.recipe-point:hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: black;
+}
+
+.recipe-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.query-point {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: black;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  z-index: 10; 
+}

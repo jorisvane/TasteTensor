@@ -1,15 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
+import RecipeMap from './components/RecipeMap'; 
 import './App.css';
 
 interface SearchResult {
   title: string;
   image: string;
+  x: number;
+  y: number;
+}
+
+interface Coords {
+  x: number;
+  y: number;
+}
+
+interface ApiResponse {
+  results: SearchResult[];
+  queryCoords: Coords | null;
 }
 
 function App() {
   const [query, setQuery] = useState<string>('');
-  const [results, setResults] = useState<SearchResult[]>([]);
+  const [apiResponse, setApiResponse] = useState<ApiResponse>({
+    results: [],
+    queryCoords: null,
+  });
 
   useEffect(() => {
     if (!query) return;
@@ -17,8 +33,8 @@ function App() {
     const fetchResults = async () => {
       try {
         const response = await fetch(`http://localhost:8000/api/search?query=${query}`);
-        const data = await response.json();
-        setResults(data.results);
+        const data: ApiResponse = await response.json();
+        setApiResponse(data); 
       } catch (err) {
         console.error('Failed to fetch:', err);
       }
@@ -28,26 +44,24 @@ function App() {
   }, [query]);
 
   return (
-    <div className="app-container">
-      <div className="top-row">
-        <div className="search-label">
-          <span className="label-line">Taste</span>
-          <span className="label-line">Tensor</span>
+    <div className="app">
+      <header className="app-header">
+        <div className="logo">
+          TasteTensor
         </div>
-        <div className="centered-search-bar">
+        <div className="search-bar-container">
           <SearchBar onSearch={setQuery} />
         </div>
-      </div>
+      </header>
 
-      <ul className="results-list">
-        {results.map((item, idx) => (
-          <li key={idx}>
-            <strong>{item.title}</strong><br />
-            <span>{item.image}</span>
-          </li>
-        ))}
-      </ul>
-
+     <main className="map-view-container">
+      {apiResponse.results.length > 0 && apiResponse.queryCoords && (
+        <RecipeMap
+          recipes={apiResponse.results}
+          queryCoords={apiResponse.queryCoords}
+        />
+      )}
+    </main> 
     </div>
   );
 }

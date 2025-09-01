@@ -15,11 +15,11 @@ def fetch_embeddings():
         vectors = []
         for row in rows:
             ids.append(row[0])
-            # convert string to list[float]
+           
             if isinstance(row[1], str):
                 vector = ast.literal_eval(row[1])
             else:
-                vector = row[1]  # already a list
+                vector = row[1]
             vectors.append(vector)
         return ids, np.array(vectors)
 
