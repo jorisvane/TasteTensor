@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import './App.css';
 
+interface SearchResult {
+  title: string;
+  image: string;
+}
+
 function App() {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
+  const [query, setQuery] = useState<string>('');
+  const [results, setResults] = useState<SearchResult[]>([]);
 
   useEffect(() => {
     if (!query) return;
