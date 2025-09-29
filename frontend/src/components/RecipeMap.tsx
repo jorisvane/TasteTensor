@@ -1,5 +1,6 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import './RecipeMap.css';
+import SecureImage from './SecureImage';
 
 interface Recipe {
   title: string;
@@ -53,15 +54,11 @@ export default function RecipeMap({ recipes, queryCoords }: RecipeMapProps) {
             }}
             title={recipe.title}
           >
-            <img 
-              // Make sure to replace this with your actual S3 bucket URL
-              src={`https://YOUR_S3_BUCKET_URL/food-images/${recipe.image}`}
-              alt={recipe.title}
-              className="recipe-image"
-            />
+
+            <SecureImage imageName={recipe.image} altText={recipe.title} />
           </div>
         ))}
-
+        
         {queryCoords && (
           <div
             className="query-point"

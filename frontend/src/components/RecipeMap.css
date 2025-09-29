@@ -25,18 +25,16 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   overflow: hidden; 
+  /* The background color will show while the image is loading */
   background-color: #ccc; 
 }
 
+/* CORRECTED: Combined the two hover rules into one */
 .recipe-point:hover {
-  transform: translate(-50%, -50%) scale(1.2); 
+  transform: translate(-50%, -50%) scale(1.5); /* Use the larger scale */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 20; 
-}
-
-.recipe-point:hover {
-  transform: translate(-50%, -50%) scale(1.5);
-  background-color: black;
+  /* REMOVED: background-color: black; */
 }
 
 .recipe-image {
